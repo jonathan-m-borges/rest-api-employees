@@ -1,65 +1,118 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<!doctype html>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.15.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.15.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.15.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.15.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.15.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Simple REST API Employees</title>
+  <link rel="stylesheet" href="style.css">
+  <base href="https://rest-api-employees.web.app/">
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Simple REST API Employees</a>
+  </nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+
+  <div class="container-fluid">
+
+    <h2>Welcome to Simple REST API Employees</h2>
+
+    <div class="alert alert-primary" role="alert">
+      <strong>Info - </strong> This API was based on the original <a href="http://dummy.restapiexample.com/"
+        target="_blank">Dummy REST API</a>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <p>
+      This page will contains all rest service. Thease are Online REST API for Testing and Prototyping of sample
+      application which are using rest call to display listing and crud features.
+    </p>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <h3>There are following public APIs</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Route</th>
+          <th>Method</th>
+          <th>Type</th>
+          <th>Full route</th>
+          <th>Description</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>/employee</td>
+          <td>GET</td>
+          <td>JSON</td>
+          <td><a href="https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/employees" class="link-red"
+              target="_blank">https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/employees</a></td>
+          <td>Get all employee data</td>
+          <td><a href="/employees-details.html" class="red-link">Details</a></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>/employee/{id}</td>
+          <td>GET</td>
+          <td>JSON</td>
+          <td><a href="https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/employee/1" class="link-red"
+              target="_blank">https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/employee/1</a></td>
+          <td>Get a single employee data</td>
+          <td><a href="/employee-details.html" class="red-link">Details</a></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>/create</td>
+          <td>POST</td>
+          <td>JSON</td>
+          <td><a href="https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/create" class="link-red"
+              target="_blank">https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/create</a></td>
+          <td>Create new record in database</td>
+          <td><a href="/create-details.html" class="red-link">Details</a></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>/update/{id}</td>
+          <td>PUT</td>
+          <td>JSON</td>
+          <td><a href="https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/update/21/" class="link-red"
+              target="_blank">https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/update/21</a></td>
+          <td>Update an employee record</td>
+          <td><a href="/update-details.html" class="red-link">Details</a></td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>/delete/{id}</td>
+          <td>DELETE</td>
+          <td>JSON</td>
+          <td><a href="https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/delete/2/" class="link-red"
+              target="_blank">https://us-central1-rest-api-employees.cloudfunctions.net/api/v1/delete/2</a></td>
+          <td>Delete an employee record</td>
+          <td><a href="/delete-details.html" class="red-link">Details</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
