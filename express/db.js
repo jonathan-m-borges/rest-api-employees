@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require("mongodb");
-MongoClient.connect("mongodb://localhost:27017/employees")
+MongoClient.connect("mongodb://mongo:27017/employees")
   .then(conn => global.conn = conn.db("employees"))
   .catch(err => console.log(err))
 

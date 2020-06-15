@@ -168,7 +168,7 @@ app.delete('/api/v1/delete/:id', async (req, res) => {
 });
 
 // static site
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 
 app.listen(5000, function () {
   console.log('App listening on port 5000!');

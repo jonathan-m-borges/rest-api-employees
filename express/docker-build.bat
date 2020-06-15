@@ -1,0 +1,1 @@
+docker build -f Dockerfile -t registry.gitlab.com/jonathan-m-borges/jmborges.site:rest-api-employees .
