@@ -20,7 +20,7 @@ api.get('/v1/employees', async (req, res) => {
       employee_name: data.name,
       employee_salary: data.salary,
       employee_age: data.age,
-      profile_imagem: data.profile_image
+      profile_image: data.profile_image
     });
   });
   return res.json({

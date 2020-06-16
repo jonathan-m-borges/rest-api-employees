@@ -19,7 +19,7 @@ app.get('/api/v1/employees', async (req, res) => {
         employee_name: item.name,
         employee_salary: item.salary,
         employee_age: item.age,
-        profile_imagem: item.profile_image
+        profile_image: item.profile_image
       });
     })
     return res.json({
